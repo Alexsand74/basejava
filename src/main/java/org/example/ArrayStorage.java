@@ -1,9 +1,11 @@
+package org.example;
 /**
  * Array based storage for Resumes
  */
 public class ArrayStorage {
 
-    Resume[] storage = new Resume[10000];
+    Resume [] storage = new Resume[10000];
+    private int size = 0;
 
     void clear() {
     }
@@ -22,10 +24,10 @@ public class ArrayStorage {
      * @return array, contains only Resumes in storage (without null)
      */
     Resume[] getAll() {
-        return new Resume[0];
+          return new Resume[0];
     }
 
     int size() {
-        return 0;
+        return size;
     }
 }

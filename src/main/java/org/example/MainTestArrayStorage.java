@@ -1,3 +1,4 @@
+package org.example;
 /**
  * Test for your ArrayStorage implementation
  */

@@ -1,3 +1,4 @@
+package org.example;
 /**
  * Initial resume class
  */
