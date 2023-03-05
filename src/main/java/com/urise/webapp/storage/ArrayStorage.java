@@ -4,8 +4,9 @@ import com.urise.webapp.model.Resume;
 
 import java.util.Arrays;
 
-public class ArrayStorage {
-    private final Resume[] storage = new Resume[10000];
+public class ArrayStorage implements InterfaceStorage {
+    private static final int STORANGE_LIMIT = 10000;
+    private final Resume[] storage = new Resume[STORANGE_LIMIT];
     private int size = 0;
 
     public void clear() {
@@ -33,7 +34,7 @@ public class ArrayStorage {
 
     public void save(Resume r) {
         int i = getIndex(r.getUuid());
-        if (i != -1 || size == storage.length) {
+        if (i != -1 || size == STORANGE_LIMIT) {
             System.out.println(" Resume " + r.getUuid() + " already exist ");
         } else {
             storage[size] = r;
