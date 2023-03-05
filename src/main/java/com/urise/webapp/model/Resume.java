@@ -1,11 +1,13 @@
 package com.urise.webapp.model;
 
+import java.util.Objects;
+
 /**
  * Initial resume class
  */
 public class Resume {
     // Unique identifier
-    String uuid;
+    private String uuid;
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
@@ -17,16 +19,17 @@ public class Resume {
         return uuid;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (!(o instanceof Resume)) return false;
-//        Resume resume = (Resume) o;
-//        return Objects.equals(getUuid(), resume.getUuid());
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(getUuid());
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || !(o instanceof Resume)) return false;
+        Resume resume = (Resume) o;
+        return getUuid().equals(resume.getUuid());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUuid());
+    }
+
 }
