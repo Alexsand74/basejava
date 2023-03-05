@@ -8,17 +8,17 @@ import com.urise.webapp.storage.ArrayStorage;
  */
 public class MainTestArrayStorage {
 
-    static final ArrayStorage ARRAY_STORAGE = new ArrayStorage();
+    private static final ArrayStorage ARRAY_STORAGE = new ArrayStorage();
 
     public static void main(String[] args) {
 
-        Resume r1 = new Resume();
+        final Resume r1 = new Resume();
         r1.setUuid("uuid1");
-        Resume r2 = new Resume();
+        final Resume r2 = new Resume();
         r2.setUuid("uuid2");
-        Resume r3 = new Resume();
+        final Resume r3 = new Resume();
         r3.setUuid("uuid3");
-        Resume r4 = new Resume();
+        final Resume r4 = new Resume();
         r4.setUuid("uuid4");
 
         ARRAY_STORAGE.save(r1);
@@ -34,7 +34,7 @@ public class MainTestArrayStorage {
         printAll();
         ARRAY_STORAGE.delete(r1.getUuid());
         printAll();
-        ARRAY_STORAGE.update(r4,r1);
+        ARRAY_STORAGE.update(r4, r1);
         printAll();
         ARRAY_STORAGE.clear();
         printAll();
